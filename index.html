@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="tracker-container">
+    <h1>Student Budget Tracker</h1>
+
+    <div class="form-group">
+      <label for="income">Budget Amount</label>
+      <input type="number" id="income" placeholder="Enter your Budget">
+      <label for="frequency">Budget Frequency</label>
+      <select id="frequency">
+        <option value="monthly" selected>Monthly</option>
+        <option value="weekly">Weekly</option>
+        <option value="daily">Daily</option>
+        <option value="yearly">Yearly</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="expense">Add an Expense</label>
+      <input type="text" id="expense-name" placeholder="Expense name">
+      <input type="number" id="expense-amount" placeholder="Amount">
+    </div>
+
+    <div class="button-group">
+      <button id="add-expense">Add Expense</button>
+    </div>
+
+    <div class="summary">
+      <h2 id="summary-title">Summary (Monthly View)</h2>
+      <p>Total Budget: ₱<span id="total-income">0</span></p>
+      <p>Total Expenses: ₱<span id="total-expenses">0</span></p>
+      <p>Remaining Balance: ₱<span id="balance">0</span></p>
+
+      <h3>Budget Breakdown</h3>
+      <ul style="padding-left: 1.2rem;">
+        <li>Daily: ₱<span id="daily-income">0</span></li>
+        <li>Weekly: ₱<span id="weekly-income">0</span></li>
+        <li>Monthly: ₱<span id="monthly-income">0</span></li>
+        <li>Yearly: ₱<span id="yearly-income">0</span></li>
+      </ul>
+    </div>
+
+    <div class="expense-list" id="expense-list"></div>
+
+    <div class="chart-container">
+      <canvas id="budgetChart" height="100"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
